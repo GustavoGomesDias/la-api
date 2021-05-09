@@ -1,0 +1,20 @@
+{
+  "name": "outra-api-ai",
+  "version": "1.0.0",
+  "description": "API desenvolvida  para estudos de alguns conceitos envolvendo ES6+",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GustavoGomesDias/outra-api-ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GustavoGomesDias/outra-api-ai/issues"
+  },
+  "homepage": "https://github.com/GustavoGomesDias/outra-api-ai#readme"
+}
