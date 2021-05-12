@@ -25,6 +25,17 @@ class UserController {
   }
 
   // Show
+  async show(req, res) {
+    try {
+      const { id } = req.params;
+      const user = await User.findByPk(id, {
+        attributes: ['nome', 'email', 'created_at', 'updated_at'],
+      });
+      return res.json(user);
+    } catch (err) {
+      return res.json(null);
+    }
+  }
 
   // Update
 
