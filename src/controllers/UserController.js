@@ -38,6 +38,35 @@ class UserController {
   }
 
   // Update
+  async update(req, res) {
+    try {
+      const { id } = req.params;
+
+      if (!id) {
+        return res.status(401).json({
+          errors: ['ID não enviado.'],
+        });
+      }
+      const user = await User.findByPk(id, {
+        attributes: ['id', 'nome', 'email', 'created_at', 'updated_at'],
+      });
+
+      if (!user) {
+        return res.status(401).json({
+          errors: ['Usuário não existe.'],
+        });
+      }
+
+      const newData = await user.update(req.body, {
+        attributes: ['nome', 'email', 'created_at', 'updated_at'],
+      });
+
+      return res.json(newData);
+    } catch (err) {
+      console.log(err);
+      return res.json(null);
+    }
+  }
 
   // Delete
 }
