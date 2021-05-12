@@ -27,6 +27,7 @@
     "sucrase": "^3.18.1"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^9.0.1",
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
