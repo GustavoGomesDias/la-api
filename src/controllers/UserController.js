@@ -4,7 +4,8 @@ class UserController {
   async store(req, res) {
     try {
       const user = await User.create(req.body);
-      return res.json(user);
+      const { id, nome, email } = user;
+      return res.json({ id, nome, email });
     } catch (err) {
       return res.status(400).json({
         errors: err.errors.map((e) => e.message),
@@ -16,7 +17,7 @@ class UserController {
   async index(req, res) {
     try {
       const users = await User.findAll({
-        attributes: ['nome', 'email', 'created_at', 'updated_at'],
+        attributes: ['id', 'nome', 'email'],
       });
       return res.json(users);
     } catch (err) {
@@ -29,7 +30,7 @@ class UserController {
     try {
       const { id } = req.params;
       const user = await User.findByPk(id, {
-        attributes: ['nome', 'email', 'created_at', 'updated_at'],
+        attributes: ['id', 'nome', 'email'],
       });
       return res.json(user);
     } catch (err) {
@@ -40,14 +41,7 @@ class UserController {
   // Update
   async update(req, res) {
     try {
-      const { id } = req.params;
-
-      if (!id) {
-        return res.status(401).json({
-          errors: ['ID não enviado.'],
-        });
-      }
-      const user = await User.findByPk(id, {
+      const user = await User.findByPk(req.userId, {
         attributes: ['id', 'nome', 'email', 'created_at', 'updated_at'],
       });
 
@@ -58,7 +52,7 @@ class UserController {
       }
 
       const newData = await user.update(req.body, {
-        attributes: ['nome', 'email', 'created_at', 'updated_at'],
+        attributes: ['id', 'nome', 'email'],
       });
 
       return res.json(newData);

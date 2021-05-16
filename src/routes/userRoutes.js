@@ -6,10 +6,11 @@ const router = Router();
 
 // create = store
 
+router.get('/', loginRequired, userController.index); // Não deveria existir
+router.get('/:id', userController.show); // Não deveria existir
+
 router.post('/', userController.store);
-router.get('/', loginRequired, userController.index);
-router.get('/:id', userController.show);
-router.put('/:id', loginRequired, userController.update);
-router.delete('/:id', loginRequired, userController.delete);
+router.put('/', loginRequired, userController.update);
+router.delete('/', loginRequired, userController.delete);
 
 export default router;

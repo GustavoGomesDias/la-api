@@ -3,7 +3,7 @@ import User from '../models/User';
 
 class TokenController {
   async store(req, res) {
-    const { email = '', password = '' } = req.body;
+    const { email, password } = req.body;
 
     if (!email || !password) {
       return res.status(401).json({
