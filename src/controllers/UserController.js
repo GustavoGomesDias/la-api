@@ -66,14 +66,7 @@ class UserController {
   // Delete
   async delete(req, res) {
     try {
-      const { id } = req.params;
-
-      if (!id) {
-        return res.status(401).json({
-          errors: ['ID não enviado.'],
-        });
-      }
-      const user = await User.findByPk(id, {
+      const user = await User.findByPk(req.userId, {
         attributes: ['id', 'nome', 'email', 'created_at', 'updated_at'],
       });
 
