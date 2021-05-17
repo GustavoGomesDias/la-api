@@ -62,7 +62,7 @@ class AlunoController {
         });
       }
 
-      const attAluno = aluno.update(req.body);
+      const attAluno = await aluno.update(req.body);
 
       return res.json(attAluno);
     } catch (err) {
