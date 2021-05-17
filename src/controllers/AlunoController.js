@@ -6,7 +6,7 @@ class AlunoController {
     res.json({ alunos });
   }
 
-  async store(req, res) {
+  async show(req, res) {
     try {
       const { id } = req.params;
 
@@ -32,12 +32,36 @@ class AlunoController {
     }
   }
 
-  async show(req, res) {
+  async store(req, res) {
 
   }
 
   async update(req, res) {
+    try {
+      const { id } = req.params;
 
+      if (!id) {
+        return res.status(400).json({
+          errors: ['Id não passado'],
+        });
+      }
+
+      const aluno = await Aluno.findByPk(id);
+
+      if (!aluno) {
+        return res.status(400).json({
+          errors: ['Aluno não existe'],
+        });
+      }
+
+      const attAluno = aluno.update(req.body);
+
+      return res.json(attAluno);
+    } catch (err) {
+      return res.status(400).json({
+        errors: err.errors.map((e) => e.message),
+      });
+    }
   }
 
   async delete(req, res) {
