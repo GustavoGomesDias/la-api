@@ -47,7 +47,109 @@ Para usar técnicas mais avançadas, eu criei essa API.
 4. Digite localhost:3001 e siga a minha tentativa de documentação para usar a api
 
 ## 4. 📖 Documentação
-##### Escrever a documentação
+### Users
+#### GET
+##### /users
+Descrição   | Valor
+--------- | ------
+Autenticação | Requerido
+Parâmetros | Não requerido
+Status code | 200 (OK)
+
+##### /users/id
+Descrição   | Valor
+--------- | ------
+Autenticação | Requerido
+Parâmetros | Id do usuário
+Status code | 200 (OK)
+
+#### POST
+##### /users
+Descrição   | Valor
+--------- | ------
+Autenticação | Não Requerido
+Parâmetros | Não Requerido
+Status code | 200 (OK) ou 400 (Bad Request)
+
+#### PUT
+##### /users
+Descrição   | Valor
+--------- | ------
+Autenticação | Requerido
+Parâmetros | Não Requerido
+Status code | 200 (OK) ou 400 (Bad Request)
+
+#### DELETE
+##### /users
+Descrição   | Valor
+--------- | ------
+Autenticação | Requerido
+Parâmetros | Não Requerido
+Status code | 200 (OK) ou 400 (Bad Request)
+
+---
+
+### Alunos
+#### GET
+##### /alunos
+Descrição   | Valor
+--------- | ------
+Autenticação | Não Requerido
+Parâmetros | Não requerido
+Status code | 200 (OK)
+
+##### /alunos/id
+Descrição   | Valor
+--------- | ------
+Autenticação | Requerido
+Parâmetros | Id do aluno
+Status code | 200 (OK) ou 400 (Bad Request)
+
+#### POST
+##### /alunos
+Descrição   | Valor
+--------- | ------
+Autenticação | Não Requerido
+Parâmetros | Não Requerido
+Status code | 200 (OK) ou 400 (Bad Request)
+
+#### PUT
+##### /users
+Descrição   | Valor
+--------- | ------
+Autenticação | Requerido
+Parâmetros | Id do Aluno
+Status code | 200 (OK) ou 400 (Bad Request)
+
+#### DELETE
+##### /alunos
+Descrição   | Valor
+--------- | ------
+Autenticação | Requerido
+Parâmetros | Id do Aluno
+Status code | 200 (OK) ou 400 (Bad Request
+
+---
+
+### Image
+#### POST
+##### /images
+Descrição   | Valor
+--------- | ------
+Autenticação | Não Requerido
+Parâmetros | Não Requerido
+Status code | 200 (OK) ou 400 (Bad Request)
+
+---
+
+### Token (login)
+#### POST
+##### /tokens
+Descrição   | Valor
+--------- | ------
+Autenticação | Não Requerido
+Parâmetros | Não Requerido
+Status code | 200 (OK) ou 400 (Bad Request)
 
 ## Autor
 <table>
