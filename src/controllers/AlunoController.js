@@ -4,7 +4,7 @@ import Image from '../models/Image';
 class AlunoController {
   async index(req, res) {
     const alunos = await Aluno.findAll({
-      attributes: ['id', 'nome', 'sobrenome', 'idade', 'peso', 'altura'],
+      attributes: ['id', 'nome', 'sobrenome', 'email', 'idade', 'peso', 'altura'],
       order: [['id', 'DESC'], [Image, 'id', 'DESC']],
       include: {
         model: Image,
